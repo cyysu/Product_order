@@ -1,0 +1,26 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>				
+		<property name="dialect">org.hibernate.dialect.Oracle9Dialect</property>
+		<property name="connection.url">
+			jdbc:oracle:thin:@127.0.0.1:1521:orcldb
+		</property>
+		<property name="connection.username">scott</property>
+		<property name="connection.password">orcl</property>
+		<property name="connection.driver_class">
+			oracle.jdbc.OracleDriver
+		</property>
+		<property name="current_session_context_class">thread</property>
+		<property name="myeclipse.connection.profile">scotts</property>
+		<!-- 		<property name="show_sql">true</property> -->		
+		<mapping resource="cn/jbit/product_order/entity/Orders.hbm.xml" />
+		<mapping
+			resource="cn/jbit/product_order/entity/Product.hbm.xml" />
+		<mapping
+			resource="cn/jbit/product_order/entity/OrdersDetails.hbm.xml" />
+
+	</session-factory>
+</hibernate-configuration>

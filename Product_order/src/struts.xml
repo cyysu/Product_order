@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<!-- <constant name="struts.custom.il8n.resources" value="message"></constant> -->
+	<!--<constant name="struts.il8n.encoding" value="UTF-8"></constant>-->
+	<!-- <constant name="struts.enable.DynamicMethodInvocation" value="false"/> -->
+	<package name="default" extends="struts-default" namespace="/">
+		<action name="Product" class="cn.jbit.product_order.action.productAction">
+			<result name="success">productList.jsp</result>
+			<result name="input">index.jsp</result>
+		</action>
+		<action name="ProductById" class="cn.jbit.product_order.action.ProGetByIdAction">
+			<result name="success">ShopProduct.jsp</result>
+			<result name="input">productList.jsp</result>
+		</action>
+		<action name="OrderDetails" class="cn.jbit.product_order.action.OrderDetailsAction">
+			<result name="success">orderDetails.jsp</result>
+			<result name="input">orderSelect.jsp</result>
+		</action>
+		<action name="AddOrder" class="cn.jbit.product_order.action.AddOrderAction">
+			<result name="success">prodetail.jsp</result>
+			<result name="input">ShopProduct.jsp</result>
+			<result name="error">index.jsp</result>
+		</action>
+	</package>
+</struts>
